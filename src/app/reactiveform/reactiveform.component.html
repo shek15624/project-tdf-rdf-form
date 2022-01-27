@@ -1,0 +1,119 @@
+<div class="rdt">
+    <h1 class="text-center">Reactive Driven Form</h1>
+    <div class="container rdt-con">
+        <div class="row">
+            <div class="col-lg-12">
+                <form [formGroup]="loginForm">
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email address</label>
+                        <span class="error"
+                            *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.untouched">*</span>
+                        <input type="email" class="form-control" placeholder="Enter Email" formControlName="email"
+                            name="email">
+                        <span class="error"
+                            *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">Email is
+                            Requried</span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="InputPassword1" class="form-label">Password</label>
+                        <span class="error"
+                            *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.untouched">*</span>
+                        <input type="password" class="form-control" placeholder="Enter Email" formControlName="pswd"
+                            name="pswd">
+                        <span class="error"
+                            *ngIf="loginForm.get('pswd')?.invalid && loginForm.get('pswd')?.touched">pass is
+                            Requried</span>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="text" class="form-label">First Name</label>
+                        <span class="error"
+                            *ngIf="loginForm.get('fname')?.invalid && loginForm.get('fname')?.untouched">*</span>
+                        <input type="text" class="form-control" placeholder="First Name" formControlName="fname"
+                            name="fname">
+                        <span class="error"
+                            *ngIf="loginForm.get('fname')?.invalid && loginForm.get('fname')?.touched">FirstName Is
+                            Requried</span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="InputPassword1" class="form-label">Last Name</label>
+                        <span class="error"
+                            *ngIf="loginForm.get('lname')?.invalid && loginForm.get('lname')?.untouched">*</span>
+                        <input type="text" class="form-control" placeholder="Last Name" formControlName="lname"
+                            name="lname">
+                        <span class="error"
+                            *ngIf="loginForm.get('lname')?.invalid && loginForm.get('lname')?.touched">LastName is
+                            Requried</span>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="text" class="form-label">User Name</label>
+                        <span class="error"
+                            *ngIf="loginForm.get('uname')?.invalid && loginForm.get('uname')?.untouched">*</span>
+                        <input type="text" class="form-control" placeholder="User Name" formControlName="uname"
+                            name="uname">
+                        <span class="error"
+                            *ngIf="loginForm.get('uname')?.invalid && loginForm.get('uname')?.touched">UserName Is
+                            Requried</span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="InputPassword1" class="form-label">Street</label>
+                        <span class="error"
+                            *ngIf="loginForm.get('street')?.invalid && loginForm.get('street')?.untouched">*</span>
+                        <input type="text" class="form-control" placeholder="Street" formControlName="street"
+                            name="street">
+                        <span class="error"
+                            *ngIf="loginForm.get('street')?.invalid && loginForm.get('street')?.touched">Enter The
+                            Street</span>
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="InputPassword1" class="form-label">State</label>
+                        <span class="error"
+                            *ngIf="loginForm.get('state')?.invalid && loginForm.get('state')?.untouched">*</span>
+                        <input type="text" class="form-control" placeholder="State" formControlName="state"
+                            name="state">
+                        <span class="error"
+                            *ngIf="loginForm.get('state')?.invalid && loginForm.get('state')?.touched">Enter The
+                            State</span>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="text" class="form-label">City</label>
+                        <span class="error"
+                            *ngIf="loginForm.get('city')?.invalid && loginForm.get('city')?.untouched">*</span>
+                        <input type="text" class="form-control" placeholder="City" formControlName="city" name="city">
+                        <span class="error"
+                            *ngIf="loginForm.get('city')?.invalid && loginForm.get('city')?.touched">Enter The
+                            City</span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="InputPassword1" class="form-label">ZipCode</label>
+                        <span class="error"
+                            *ngIf="loginForm.get('zip')?.invalid && loginForm.get('zip')?.untouched">*</span>
+                        <input type="text" class="form-control" placeholder="ZipCode" formControlName="zip" name="zip">
+                        <span class="error" *ngIf="loginForm.get('zip')?.invalid && loginForm.get('zip')?.touched">Enter
+                            The ZipCode</span>
+
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" style="margin-left: 152px;" type="checkbox" id="terms"
+                                ngModel name="terms" #terms="ngModel" value="" required>
+                            <label class="agree form-check-label" for="terms">
+                                Agree to terms and conditions
+                            </label>
+                            <div *ngIf="terms.touched && terms.invalid" class="invalid-feedback">
+                                You must agree before submitting.
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>

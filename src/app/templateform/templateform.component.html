@@ -1,0 +1,147 @@
+<h1 style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Template Driven Form</h1>
+<div class="main">
+    <div class="container">
+        <div class="row" style="display: flex;
+        justify-content: center;">
+            <div class="vali col-lg-6">
+                <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+                    <div class="form-group" style="margin-top: 23px;">
+                        <label for="email">Email:</label>
+                        <span class="text-star text-danger" *ngIf="email.untouched && email.invalid">*</span>
+
+                        <input type="email" required #email="ngModel" ngModel class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                            placeholder="Enter email" name="email">
+                            <div class="text-star text-danger" *ngIf="email.touched && email.invalid">
+                                <div class="text text-danger" *ngIf="email.errors?.['required']">Email Is Requried</div>
+                                <div class="text text-danger" *ngIf="email.errors?.['minlength']">password must be at 6
+                                    characters
+                                </div>
+                            </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <span class="text-star text-danger" *ngIf="pswd.untouched && pswd.invalid">*</span>
+                        <input type="password" ngModel #pswd="ngModel" required class="form-control" minlength="6"
+                    
+                            placeholder="Enter password" name="pswd">
+                            <div class="text-star text-danger" *ngIf="pswd.touched && pswd.invalid">
+                                <div class="text text-danger" *ngIf="pswd.errors?.['required']">Password Is Requried</div>
+                                <div class="text text-danger" *ngIf="pswd.errors?.['minlength']">password must be at 6
+                                    characters
+                                </div>
+                            </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="text" style="padding-top: 30px;">FirstName</label>
+                        <span class="text-star  text-danger" *ngIf="fname.untouched && fname.invalid">*</span>
+                        <input type="text" class="form-control" #fname="ngModel" minlength="2" ngModel required
+                            placeholder="First Name" name="fname">
+                        <div class="text text-danger" *ngIf="fname.touched && fname.invalid">
+                            <div class="text-f text-danger" *ngIf="fname.errors?.['required']">FirstName Is Requried</div>
+                            <div class="text text-danger" *ngIf="fname.errors?.['minlength']">morethan 2 characters
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="text">LastName</label>
+                        <span class="text-star text-danger" *ngIf="lname.untouched && lname.invalid">*</span>
+                        <input type="text" class="form-control" #lname="ngModel" minlength="2" ngModel required
+                            placeholder="Last Name" name="lname">
+                        <div class="text text-danger" *ngIf="lname.touched && lname.invalid">
+                            <div class="text-l text-danger" *ngIf="lname.errors?.['required']">LastName Is Requried</div>
+                            <div class="text text-danger" *ngIf="lname.errors?.['minlength']">morethan 2 characters
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="text">UserName</label>
+                        <span class="text-star text-danger" *ngIf="uname.untouched && uname.invalid">*</span>
+                        <input type="text" class="form-control" #uname="ngModel" ngModel required
+                            placeholder="User Name" name="uname">
+                        <span class="text text-danger" *ngIf="uname.touched && uname.invalid"> UserName Is
+                            Requried</span>
+                        <span class="text text-success" *ngIf="uname.valid"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Street</label>
+                        <span class="text=star text-danger" *ngIf="street.untouched && street.invalid">*</span>
+                        <input type="text" class="form-control" #street="ngModel" ngModel required placeholder="Street"
+                            name="street">
+                        <span class="text text-danger" *ngIf="street.touched && street.invalid"> Street Is
+                            Requried</span>
+                        <span class="text text-success" *ngIf="street.valid"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="text">State</label>
+                        <span class="text-star text-danger" *ngIf="state.untouched && state.invalid">*</span>
+                        <input type="text" class="form-control" #state="ngModel" ngModel required placeholder="State"
+                            name="state">
+                        <span class="text text-danger" *ngIf="state.touched && state.invalid"> state Is
+                            Requried</span>
+                        <span class="text text-success" *ngIf="state.valid"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="text">City</label>
+                        <span class="text-star text-danger" *ngIf="city.untouched && city.invalid">*</span>
+                        <input type="text" class="form-control" #city="ngModel" ngModel required placeholder="City"
+                            name="city">
+                        <span class="text text-danger" *ngIf="city.touched && city.invalid"> City Is Requried</span>
+                        <span class="text text-success" *ngIf="city.valid"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="text">ZipCode</label>
+                        <span class="text-star text-danger" *ngIf="zip.untouched && zip.invalid">*</span>
+                        <input type="text" class="form-control" #zip="ngModel" minlength="6" ngModel required
+                            placeholder="ZipCode" name="zip">
+                        <div class="text-star text-danger" *ngIf="zip.touched && zip.invalid">
+                            <div class="text text-danger" *ngIf="zip.errors?.['required']">Pincode Is Requried</div>
+                            <div class="text text-danger" *ngIf="zip.errors?.['minlength']">must be at 6
+                                characters
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" style="margin-left: 152px;" type="checkbox" id="terms"
+                                ngModel name="terms" #terms="ngModel" value="" required>
+                            <label class="agree form-check-label" for="terms">
+                                Agree to terms and conditions
+                            </label>
+                            <div *ngIf="terms.touched && terms.invalid" class="invalid-feedback">
+                                You must agree before submitting.
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid" data-bs-toggle="modal" data-bs-target="#exampleModal" >Submit</button>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Registered Page</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <h1>Successfully Registered</h1>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </form> 
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+ 
